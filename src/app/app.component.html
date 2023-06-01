@@ -22,11 +22,19 @@
 
 <div>
   <button (click)= "onButtonClick()"> Generate! </button>
-<!--   -Angular Template Syntax -->
-<!-- Event binding synax (event) = "What it does when the event gets triggered. Even through it looks like a string, it is executing it as code" -->
+<!--   -Angular Template Syntax
+ Event binding synax (event) = "What it does when the event gets triggered. Even through it looks like a string, it is executing it as code"
+-->
 </div>
 
 <div>
   <label>Your Password</label>
-  <input type="text">
+  <input [value] = "password">
+  <!-- Property binding syntax
+  [Name of the property we want to set on this element] = "Name of the property in our class to put here. This 'string' is not a string but code"
+  ****You can also do value = {{password}} also known as interpolation. You can also call another method to make it work.
+  -->
+</div>
+<div>
+  <button (click)="onResetClick()">Reset!</button>
 </div>
