@@ -10,10 +10,16 @@ export class AppComponent {
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
+  passwordLength = 0;
 
   onButtonClick(){
     this.password = 'MY PASSWORD!!!';
-    console.log(this.includeLetters, this.includeNumbers, this.includeSymbols);
+    console.log(`About to generate a password with the following:
+    Include letters: ${this.includeLetters}
+    Include letters: ${this.includeNumbers}
+    Include letters: ${this.includeSymbols}
+    The password will be ${this.passwordLength} long.
+    `);
   }
 
   onResetClick() {
@@ -30,5 +36,9 @@ export class AppComponent {
 
   onChangeUseSymbols(){
     this.includeSymbols = !this.includeSymbols;
+  }
+
+  lengthOfPassword(value: string){
+    this.passwordLength = parseInt(value);
   }
 }
