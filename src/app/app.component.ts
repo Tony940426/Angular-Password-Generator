@@ -14,13 +14,27 @@ export class AppComponent {
   passwordLength = 0;
 
   onButtonClick(){
-    this.password = 'MY PASSWORD!!!';
-    console.log(`About to generate a password with the following:
-    Include letters: ${this.includeLetters}
-    Include letters: ${this.includeNumbers}
-    Include letters: ${this.includeSymbols}
-    The password will be ${this.passwordLength} long.
-    `);
+    const numbers = '1234567890'
+    const letters = 'abcdefghijklmnopqrstuvwxyz'
+    const symbols = '!@#$%^&*()_+'
+    let validChars = '';
+
+    if(this.includeLetters) {
+      validChars += letters;
+    }
+    if(this.includeNumbers) {
+      validChars += numbers
+    }
+    if(this.includeSymbols) {
+      validChars += symbols
+    }
+
+    let generatedPassword = '';
+    for (let i = 0; i < this.passwordLength; i++) {
+      const index = Math.floor(Math.random() * validChars.length)
+      generatedPassword += validChars[index];
+    }
+    this.password = generatedPassword;
   }
 
   onResetClick() {
