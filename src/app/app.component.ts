@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConnectableObservable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,12 @@ export class AppComponent {
     this.includeSymbols = !this.includeSymbols;
   }
 
-  lengthOfPassword(value: string){
-    this.passwordLength = parseInt(value);
+  lengthOfPassword(value: any){
+    const parsedValue = parseInt(value.target.value);
+    this.passwordLength = parsedValue;
+
+    if (!isNaN (parsedValue)) {
+      this.passwordLength = parsedValue;
+    }
   }
 }
