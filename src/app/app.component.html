@@ -1,42 +1,54 @@
-<h1>Password Generator</h1>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
 
-<div>
-  <label>Enter Length</label>
-  <input (input)="lengthOfPassword($event)">
-</div>
+      <div class="field">
+        <label>Enter Length</label>
+        <input class="iput" (input)="lengthOfPassword($event)">
+      </div>
 
-<div>
-  <label>Use Letters</label>
-  <input type="checkbox" (change)="onChangeUseLetters()">
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox"> Use Letters </label>
+          <input type="checkbox" (change)="onChangeUseLetters()">
+        </div>
+      </div>
 
-<div>
-  <label>Use Numbers</label>
-  <input type="checkbox" (change)="onChangeUseNumbers()">
-</div>
+      <div class="field">
+        <div class="control">
+        <label>Use Numbers</label>
+        <input type="checkbox" (change)="onChangeUseNumbers()">
+      </div>
+    </div>
 
-<div>
-  <label>Use Symbols</label>
-  <input type="checkbox" (change)="onChangeUseSymbols()">
-</div>
+    <div class="field">
+      <div class="control">
+        <label>Use Symbols</label>
+        <input type="checkbox" (change)="onChangeUseSymbols()">
+      </div>
+    </div>
 
-<div>
-  <button (click)= "onButtonClick()" [disabled] = "!(passwordLength && (includeLetters || includeNumbers || includeSymbols))"> Generate! </button>
-<!--   -Angular Template Syntax
- Event binding synax (event) = "What it does when the event gets triggered. Even through it looks like a string, it is executing it as code"
--->
-</div>
+      <div>
+        <button class="button" (click)= "onButtonClick()" [disabled] = "!(passwordLength && (includeLetters || includeNumbers || includeSymbols))"> Generate! </button>
+      <!--   -Angular Template Syntax
+       Event binding synax (event) = "What it does when the event gets triggered. Even through it looks like a string, it is executing it as code"
+      -->
+      </div>
 
-<div>
-  <label>Your Password</label>
-  <input [value] = "password">
-  <!-- Property binding syntax
-  [Name of the property we want to set on this element] = "Name of the property in our class to put here. This 'string' is not a string but code"
-  ****You can also do value = {{password}} also known as interpolation. You can also call another method to make it work.
-  -->
-</div>
-<div>
-  <button (click)="onResetClick()">Reset!</button>
-</div>
+      <div class="field">
+        <label>Your Password</label>
+        <input class="input" [value] = "password">
+        <!-- Property binding syntax
+        [Name of the property we want to set on this element] = "Name of the property in our class to put here. This 'string' is not a string but code"
+        ****You can also do value = {{password}} also known as interpolation. You can also call another method to make it work.
+        -->
+      </div>
+      <div>
+        <button class="button" (click)="onResetClick()">Reset!</button>
+      </div>
 
-{{password}}
+      {{password}}
+    </div>
+  </div>
+</div>
