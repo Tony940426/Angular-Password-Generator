@@ -12,6 +12,7 @@ export class AppComponent {
   includeNumbers = false;
   includeSymbols = false;
   passwordLength = 0;
+  generateDisabled = false;
 
   onButtonClick(){
     const numbers = '1234567890'
@@ -59,6 +60,14 @@ export class AppComponent {
 
     if (!isNaN (parsedValue)) {
       this.passwordLength = parsedValue;
+    }
+  }
+
+  buttonDisabled() {
+    if(this.passwordLength < 1) {
+      this.generateDisabled = true
+    } else {
+      this.generateDisabled = false
     }
   }
 }

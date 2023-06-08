@@ -21,7 +21,7 @@
 </div>
 
 <div>
-  <button (click)= "onButtonClick()"> Generate! </button>
+  <button (click)= "onButtonClick()" [disabled] = "!(passwordLength && (includeLetters || includeNumbers || includeSymbols))"> Generate! </button>
 <!--   -Angular Template Syntax
  Event binding synax (event) = "What it does when the event gets triggered. Even through it looks like a string, it is executing it as code"
 -->
