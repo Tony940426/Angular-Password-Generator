@@ -36,7 +36,7 @@
       -->
       </div>
 
-      <div class="field">
+      <div class="box" *ngIf = "password">
         <label>Your Password</label>
         <input class="input" [value] = "password">
         <!-- Property binding syntax
@@ -47,8 +47,6 @@
       <div>
         <button class="button" (click)="onResetClick()">Reset!</button>
       </div>
-
-      {{password}}
     </div>
   </div>
 </div>
